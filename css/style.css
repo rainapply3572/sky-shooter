@@ -249,17 +249,33 @@ button.mini {
   font-size: 12px;
 }
 
-#btn-focus {
+#btn-focus,
+#btn-bomb {
   position: absolute;
   right: 8px;
-  bottom: calc(8px + env(safe-area-inset-bottom));
   width: 70px;
-  height: 70px;
   border-radius: 50%;
+  z-index: 5;
+  pointer-events: auto;
+  touch-action: none;
+  font-weight: 900;
+}
+#btn-focus {
+  bottom: calc(8px + env(safe-area-inset-bottom));
+  height: 70px;
   border: 3px solid var(--yellow);
   color: var(--yellow);
+  background: rgba(16, 10, 28, 0.9);
   font-size: 16px;
-  z-index: 5;
+}
+#btn-bomb {
+  bottom: calc(86px + env(safe-area-inset-bottom));
+  height: 48px;
+  border-radius: 12px;
+  border: 3px solid #ff7a3c;
+  color: #ffe14a;
+  background: rgba(40, 16, 8, 0.9);
+  font-size: 14px;
 }
 
 #btn-focus.held {
@@ -428,6 +444,14 @@ button.alt { border-color: var(--violet); }
 button.ok { border-color: var(--green); }
 button.warn { border-color: var(--yellow); }
 button.danger { border-color: #ff3355; }
+button.rarity-common { border-color: var(--cyan); }
+button.rarity-rare { border-color: var(--green); }
+button.rarity-epic { border-color: var(--magenta); }
+button.rarity-legend {
+  border-color: var(--yellow);
+  box-shadow: 4px 4px 0 #6a4a10;
+}
+.chip.evo { border-color: var(--yellow); color: var(--yellow); }
 
 button .nm {
   display: block;
