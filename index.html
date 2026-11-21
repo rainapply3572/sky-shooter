@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#07060f">
+  <meta name="description" content="星河彈幕：直向像素彈幕射擊。用鍵盤、滑鼠或觸控躲彈，升級武器，撐過三個戰區。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>星河彈幕</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect fill='%2307060f' width='16' height='16'/%3E%3Cpath fill='%235ce1ff' d='M8 1l2 7-2-1-2 1z'/%3E%3Crect fill='%23ffe14a' x='7' y='6' width='2' height='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="deco left">星河彈幕</div>
+  <div class="deco right">光點才是判定</div>
+  <div id="stage">
+    <div id="frame">
+      <canvas id="game" width="360" height="640" aria-label="星河彈幕遊戲畫面"></canvas>
+      <div id="scan"></div>
+      <div id="vignette"></div>
+      <div id="hud" class="hidden">
+        <div class="hud-top">
+          <div>
+            <div class="k">分數</div>
+            <div class="v" id="hud-score">000000</div>
+          </div>
+          <div>
+            <div class="k">最高</div>
+            <div class="v" id="hud-best">000000</div>
+          </div>
+          <div class="hud-actions">
+            <button type="button" id="btn-mute" class="mini">音效：開</button>
+            <button type="button" id="btn-pause" class="mini">暫停</button>
+          </div>
+        </div>
+        <div class="hud-mid">
+          <div id="hud-lives" aria-label="剩餘生命"></div>
+          <div id="hud-shield"></div>
+          <div id="hud-diff"></div>
+          <div id="hud-level"></div>
+          <div id="hud-combo"></div>
+        </div>
+        <div id="xpwrap" aria-hidden="true"><div id="xpbar"></div></div>
+        <div id="weaponbar"></div>
+        <div id="bossbar" class="hidden">
+          <div id="bossfill"></div>
+          <div id="bossname"></div>
+        </div>
+        <button type="button" id="btn-focus" aria-label="低速">低速</button>
+      </div>
+      <div id="announce" class="hidden" aria-live="polite"></div>
+      <div id="ui"></div>
+    </div>
+  </div>
+  <noscript><p>請開啟 JavaScript 才能遊玩星河彈幕。</p></noscript>
+  <script src="js/audio.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
